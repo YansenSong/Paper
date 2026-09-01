@@ -2,7 +2,21 @@
 
 ## Purpose
 
-This repository contains an academic paper written in LaTeX. Coding agents should act as careful LaTeX engineers and academic writing assistants. The human author owns all scientific judgments and final approval.
+This repository contains a reusable academic-paper skeleton written in LaTeX. Coding agents should act as careful LaTeX engineers and academic writing assistants. The human author owns all scientific judgments and final approval.
+
+## Branch policy
+
+Before editing, check the current Git branch.
+
+- `main` is the reusable skeleton branch. It should contain only generic LaTeX structure, tooling, agent instructions, and conventions that are useful across papers.
+- Never add paper-specific titles, abstracts, claims, citations, experiments, results, figures, reviewer responses, or venue-specific content directly to `main`.
+- For work on a concrete paper, create or switch to a dedicated branch from the latest `main`, preferably named `paper/<short-name>` or `paper/<venue>-<year>-<short-name>`.
+- Treat the dedicated paper branch as the integration branch for that paper.
+- If smaller task branches are useful, create them from the paper branch under a separate namespace such as `work/<short-name>/<task>`.
+- Do not merge paper-specific content back into `main`.
+- If a concrete paper reveals a genuinely reusable scaffold improvement, apply that improvement to `main` separately without bringing paper-specific content with it.
+
+If the environment permits branch creation and the user requests concrete paper work while on `main`, create the appropriate paper branch before editing. If branch creation is not permitted, do not put paper-specific content on `main`; report the limitation instead.
 
 ## Non-negotiable scientific-integrity rules
 
@@ -47,13 +61,14 @@ This repository contains an academic paper written in LaTeX. Coding agents shoul
 
 ## Required workflow after edits
 
-1. Read the relevant surrounding sections before editing.
-2. Make the smallest coherent change that satisfies the request.
-3. Run `make` after LaTeX edits when a TeX toolchain is available.
-4. Run `make check-refs` after citation edits.
-5. Fix compilation errors introduced by the change.
-6. Inspect warnings for undefined references/citations, duplicate labels, and severe overfull boxes.
-7. Review `git diff` and summarize what changed, what was validated, and any unresolved TODOs.
+1. Check the current Git branch and enforce the branch policy above.
+2. Read the relevant surrounding sections before editing.
+3. Make the smallest coherent change that satisfies the request.
+4. Run `make` after LaTeX edits when a TeX toolchain is available.
+5. Run `make check-refs` after citation edits.
+6. Fix compilation errors introduced by the change.
+7. Inspect warnings for undefined references/citations, duplicate labels, and severe overfull boxes.
+8. Review `git diff` and summarize what changed, what was validated, and any unresolved TODOs.
 
 ## Editing boundaries
 
@@ -72,6 +87,7 @@ If experiment code or results are later added to this repository:
 
 At the end of a task, report:
 
+- current branch;
 - files changed;
 - main substantive changes;
 - commands/checks run and their outcomes;
