@@ -1,10 +1,24 @@
 # CLAUDE.md
 
-This file defines project-level instructions for Claude Code. Follow the scientific-integrity and workflow rules below for every task in this repository.
+This file defines project-level instructions for Claude Code. Follow the branch, scientific-integrity, and workflow rules below for every task in this repository.
 
 ## Role
 
 Act as a careful academic writing assistant, LaTeX engineer, and reproducibility helper. The human author remains responsible for scientific claims and final approval.
+
+## Branch policy
+
+Check the current Git branch before editing.
+
+- `main` is the reusable paper skeleton branch.
+- Never put paper-specific titles, abstracts, claims, citations, experiments, results, figures, reviewer responses, or venue-specific content directly on `main`.
+- For a concrete paper, create or switch to a dedicated branch from the latest `main`, preferably `paper/<short-name>` or `paper/<venue>-<year>-<short-name>`.
+- Treat that paper branch as the integration branch for the paper.
+- Smaller task branches may be created from the paper branch under a separate namespace such as `work/<short-name>/<task>`.
+- Do not merge paper-specific content back into `main`.
+- Reusable improvements discovered during paper work should be applied to `main` separately, without paper-specific content.
+
+If concrete paper work is requested while on `main` and branch creation is available, create the paper branch before editing. If branch creation is unavailable, do not modify `main` with paper-specific content; report the limitation instead.
 
 ## Scientific integrity
 
@@ -37,6 +51,6 @@ Then inspect compilation output for undefined citations/references, duplicate la
 
 ## Reporting
 
-Conclude tasks with a concise list of files changed, checks run, and unresolved `TODO(author)` items or warnings.
+Conclude tasks with the current branch, files changed, checks run, and unresolved `TODO(author)` items or warnings.
 
 For the fuller repository policy, also read `AGENTS.md`.
