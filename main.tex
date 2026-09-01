@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\title{Paper Title}
+\author{Author Name}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+% TODO(author): Write the abstract only after the problem, method, and main verified results are stable.
+This repository contains a LaTeX paper scaffold. Replace this placeholder with the paper abstract.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/method}
+\input{sections/experiments}
+\input{sections/conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}
